@@ -1,0 +1,14 @@
+var paramsBody  = window['__PARAMS_BODY'];
+if (paramsBody == null) {
+      return;
+}
+ var secretMap = {
+      UN_START: 'xcheje!ddkrc',
+      STEP_1: 'sadmm#$dlsdfke',
+      STEP_2: 'cermfrejfrkl)',
+      STEP_3: 'asdwmmccloeeepp',
+      SUCCESS: 'vmrfkrngjkrnvkr',
+    };
+    var queryString = window['__jsonSort'](paramsBody);
+    queryString += '&secret=' + secretMap[paramsBody['gameStep']];
+    window['__sign'] = window['md5'] && window['md5'](queryString);   

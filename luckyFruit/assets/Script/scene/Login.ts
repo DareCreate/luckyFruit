@@ -25,8 +25,9 @@ export default class Login extends BaseController {
       return;
     }
     const params = {
-      phoneNum: this.loginId,
+      loginId: this.loginId,
       password: this.loginPassword,
+      tenantId: '1',
     };
     const res = await apiAccount.userLogin(params);
     if (!res.success) {
@@ -47,13 +48,11 @@ export default class Login extends BaseController {
       return;
     }
     const params = {
-      phoneNum: this.registerLoginId,
+      loginId: this.registerLoginId,
       password: this.registerPassword,
-      userName: this.registerLoginId,
-      headImg: 0,
-      parentId: '',
-    }
-    const res = await apiAccount.userRegister(params);
+      tenantId: '1',
+    };
+    const res = await apiAccount.userAdd(params);
     if (!res.success) {
       return;
     }

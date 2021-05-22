@@ -1,15 +1,20 @@
 import http from './http';
 export default {
   userLogin(params: {
-    phoneNum: string,
+    loginId: string,
     password: string,
+    tenantId: string | number,
   }) {
-    return http.get(`/appUser/userLogin`, params);
+    return http.get(`/user/userLogin`, params);
   },
-  userRegister(params: any) {
-    return http.post(`/appUser/userRegister`, params);
+  userAdd(params: {
+    loginId: string,
+    password: string,
+    tenantId: string | number,
+  }) {
+    return http.post(`/user/userAdd`, params);
   },
   userInfo() {
-    return http.get(`/luckyFruit/userGameInfo`, null);
+    return http.get(`/user/userInfo`, null);
   },
 };

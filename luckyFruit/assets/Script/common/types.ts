@@ -1,9 +1,10 @@
 export interface IUserInfo {
   balance: number,
-  userId: number,
+  id: number,
   loginId: string,
   password: string,
   pokerChips: number,
+  tenantId: number,
   winChips: number,
 }
 

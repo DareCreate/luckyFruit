@@ -2,14 +2,14 @@
  * Created by bootdo.
  */
 declare const require: any
-import { WEB_REMOTE_URL, IS_DEBUG } from '../common/config';
+import { WEB_REMOTE_URL, IS_DEBUG } from '../common/confit';
 interface IApiData {
   success: boolean;
   data: any;
   errMsg?: string;
 }
 
-const axios = require('axios');
+const axios = require('axios') || (window as any).axios;
 const baseURL = WEB_REMOTE_URL;
 const SUCCESS_CODE = 0;
 const NO_LOGIN_ERROR_CODE = 401;

@@ -158,12 +158,12 @@ export default class MainGame extends cc.Component {
     return res.data;
   }
   setUserInfo(userInfo: IUserInfo) {
-    const { balance, userId, pokerChips, winChips } = userInfo;
+    const { balance, id, pokerChips, winChips } = userInfo;
     this.userInfo = userInfo;
     this.creditLab.string = String(pokerChips);
     this.bonusWinLab.string = String(winChips);
-    this.blanceCountLab.string = String(balance * 10000 / 1000000);
-    this.idCountLab.string = `ID:${userId}`;
+    this.blanceCountLab.string = String(balance / 100);
+    this.idCountLab.string = `ID:${id}`;
   }
   async onInsertCoinsButtonClick(ev: cc.Event.EventCustom, coins: number) {
     const res = await apiGame.insertCoins({ coins });
@@ -259,17 +259,6 @@ export default class MainGame extends cc.Component {
   }
   onCloseInsertCoinsDialogButtonClick() {
     this.insertCoinsDialog.active = false;
-  }
-  async showGameRecordDialog() {
-    console.log('显示游戏记录');
-    const res = await apiGame.getMyPlayLogs();
-    if (!res.success) {
-      return;
-    }
-    console.log('游戏记录数据', res.data);
-  }
-  onShowGameRecordBtnClick() {
-    this.showGameRecordDialog();
   }
   async runlotteryResult(result?: ILotteryResult) {
     const triggerCard = result.triggerCard;
@@ -728,8 +717,5 @@ export default class MainGame extends cc.Component {
       this.exchangeDialog = exchangeDialog;
     }
     this.exchangeDialog.active = true;
-  }
-  onQuitGameBtnClick() {
-    (window.postMessage as any)('QUIT_GAME');
   }
 }

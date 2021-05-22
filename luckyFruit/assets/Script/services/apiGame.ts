@@ -3,31 +3,34 @@ export default {
   drawLottery(params: {
     chipInQOS: { signType: string, value: number }[],
   }) {
-    return http.post(`/luckyFruit/drawLottery`, params);
+    return http.post(`/core/drawLottery`, params);
   },
   comparePoint(params: {
     comparePointType: 'BIGGER' | 'LOWER' | 'TIED',
   }) {
-    return http.post(`/luckyFruit/comparePoint`, params);
+    return http.post(`/core/comparePoint`, params);
   },
   insertCoins(params: {
     coins: number,
   }) {
-    return http.put(`/luckyFruit/insertCoins`, params);
+    return http.put(`/core/insertCoins`, params);
   },
   outCoins() {
-    return http.put(`/luckyFruit/outCoins`, null);
+    return http.put(`/core/outCoins`, null);
   },
   winChipsChangePokerChips(params: { winChips: number }) {
-    return http.put(`/luckyFruit/winChipsChangePokerChips`, params);
+    return http.put(`/core/winChipsChangePokerChips`, params);
   },
   drawLotteryTestLogin(params: {
     cardGroupType: string,
     chipInQOS: { signType: string, value: number }[],
   }) {
-    return http.post(`/luckyFruit/drawLotteryTestLogin`, params);
+    return http.post(`/core/drawLotteryTestLogin`, params);
   },
-  getMyPlayLogs() {
-    return http.get('/luckyFruit/getMyPlayLogs')
-  }
+  getGiftCode(params: { balance: number }) {
+    return http.post(`/giftCode/getGiftCode`, params);
+  },
+  getGiftCodeVOS() {
+    return http.post(`/giftCode/getGiftCodeVOS`, null);
+  },
 };

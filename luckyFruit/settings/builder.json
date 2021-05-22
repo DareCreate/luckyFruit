@@ -18,7 +18,7 @@
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
   "jailbreakPlatform": false,
-  "md5Cache": true,
+  "md5Cache": false,
   "mergeStartScene": false,
   "oauthLoginServer": "",
   "optimizeHotUpdate": false,
@@ -35,7 +35,7 @@
     "orientation": "portrait",
     "zip": false
   },
-  "startScene": "a987a5a2-1833-4c69-97ba-4019f35bac72",
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
   "title": "luklyFruit",
   "webOrientation": "portrait",
   "wechatgame": {

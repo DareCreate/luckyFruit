@@ -2,7 +2,8 @@
 
 ### 游戏效果演示
 
-![Image text](./readme/game.gif)
+
+![](https://github.com/DareCreate/luckyFruit/blob/master/readme/game.gif)
 
 # 游戏demo体验
 

@@ -9,7 +9,7 @@ interface IApiData {
   errMsg?: string;
 }
 
-const axios = require('axios') || (window as any).axios;
+const axios = (window as any).axios;
 const baseURL = WEB_REMOTE_URL;
 const SUCCESS_CODE = 0;
 const NO_LOGIN_ERROR_CODE = 401;
